@@ -37,12 +37,11 @@ function fetch($url) {
 
 		// get url to article
 		// criteria: <a class="frontUrl">
-		$link = '#';
-		foreach(@$article->find('a') as $link) {
-			if ($link->class == 'frontUrl') {
-				$link = $link->href;
-			}
+		
+		if (!$link = $article->find('a')[0]->href) {
+			$link = '#';
 		}
+		
 
 		// get article's description
 		// criteria: <p itemprop="description">
@@ -139,7 +138,7 @@ function print_articles($articles, $limit) {
 		$description = ($GLOBALS['desc_title']) ? "title='{$desc}'" : '';
 		$target_attr = ($GLOBALS['new_window']) ? "target='_blank'" : '';
 
-		$a1 = ($GLOBALS['links_enable']) ? "<a href='{$link}' {$target_attr} {$description}>" : '';
+		$a1 = ($GLOBALS['links_enable']) ? "<a href='{$link}'>" : '';
 		$a2 = ($GLOBALS['links_enable']) ? '</a>' : '';
 
 		echo '<div class="title">';
