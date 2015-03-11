@@ -161,7 +161,7 @@ print_articles($articles, 20);
 <footer>
 	<span class="info">By Marko Klopets. Data from <a href="http://www.postimees.ee">Postimees</a>.</span>
 	<span class="links">
-		<a href="https://github.com/mogalful/justgirlynews">Github</a>
+		<a href="https://github.com/mogalful/justgirlynews" target="_blank">Github</a>
 		<!-- <a href="#">Contact</a> -->
 	</span>
 </footer>
