@@ -1,0 +1,202 @@
+@font-face {
+	font-family: 'weblysb';
+	src: url("fonts/weblysleekuisb.ttf");
+}
+
+@font-face {
+ 	font-family: 'weblysl';
+ 	src: url("fonts/weblysleekuisl.ttf");
+}
+
+@font-face {
+ 	font-family: 'ucu';
+ 	src: url("fonts/ucu.ttf");
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: 'Times New Roman', serif;
+	font-size: 100%;
+}
+
+article {
+	height: 100vh;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: -ms-flexbox;
+	display: flex;
+
+	-webkit-align-items: center;
+
+	    -ms-flex-align: center;
+
+	        align-items: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+}
+.articles {
+	/*-webkit-filter: blur(3px) brightness(70%) hue-rotate(-20deg) contrast(110%) grayscale(30%);*/
+	/*IG-like filters by Nick Georgiou (http://designpieces.com/2014/09/instagram-filters-css3-effects/)*/
+	/*Walden*/
+	-webkit-filter: blur(3px) sepia(0.35) contrast(0.9) brightness(1.1) hue-rotate(-10deg) saturate(1.5);
+}
+.titles {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+.title {
+	/*semi-transparent background to improve IG filter*/
+	background: rgba(0,0,255,0.1);
+	
+	height: 100vh;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+}
+h1 {
+	font-weight: normal;
+	color: white;
+	font-size: 2.3em;
+	text-shadow: 0 0 10px rgba(0,0,0,1), 0 0 10px rgba(0,0,0,.5);
+	text-align: center;
+}
+a {
+	color: inherit;
+	text-decoration: inherit;
+}
+h2 {
+	font-family: 'ucu';
+	color: white;
+	font-size: 1.5em;
+	margin-top: 1.5em;
+	text-shadow: 0 0 10px rgba(0,0,0,.7);
+	opacity: 0.8;
+	font-weight: normal;
+	pointer-events: none;
+}
+
+
+
+
+footer {
+	height: 14em;
+	background: #b1e8de;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	font-family: 'weblysl';
+	flex-direction: column;
+	font-size: 1.6em;
+	transform: translate3d(0,-3px,0);
+	transform: scale(1,1.04);
+
+}
+
+footer a {
+	text-decoration: underline;
+}
+
+.info {
+	color: white;
+	margin-bottom: 1.7em;
+}
+.links a {
+	margin: 7px;
+}
+
+
+@media (min-width: 1200px) {
+	.titles {
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-flex-wrap: wrap;
+		    -ms-flex-wrap: wrap;
+		        flex-wrap: wrap;
+	}
+	.title {
+		width: 50%;
+	}
+
+	h1 {
+		max-width: 80%;
+		/*font-size: 2vw;*/
+		font-size: 2.3em;
+	}
+	h2 {
+		font-size: 1.5em;
+	}
+
+	.articles {
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-flex-wrap: wrap;
+		    -ms-flex-wrap: wrap;
+		        flex-wrap: wrap;
+	}
+	article {
+		width: 50%;
+	}
+}
+
+@media (min-height: 1081px) {
+	.title {
+		height: 50vh;
+	}
+	article {
+		height: 50vh;
+	}
+}
+
+
+@media (max-width: 360px) {
+	/*360*/
+	.title {
+		height: 520px;
+	}
+	article {
+		height: 520px;
+	}
+
+	h1 {
+		font-size: 1.5em;
+		width: 80vw;
+	}
+	h2 {
+		font-size: 1em;
+	}
+}
