@@ -138,7 +138,7 @@ function print_articles($articles, $limit) {
 		$description = ($GLOBALS['desc_title']) ? "title='{$desc}'" : '';
 		$target_attr = ($GLOBALS['new_window']) ? "target='_blank'" : '';
 
-		$a1 = ($GLOBALS['links_enable']) ? "<a href='{$link}'>" : '';
+		$a1 = ($GLOBALS['links_enable']) ? "<a href='{$link}' {$description} {$target_attr}>" : '';
 		$a2 = ($GLOBALS['links_enable']) ? '</a>' : '';
 
 		echo '<div class="title">';
