@@ -2,7 +2,7 @@
 
 #### Grabs headlines with images from http://www.postimees.ee and turns them into elegant justgirlythings-esque masterpieces
 
-![Screenshot of justgirlynews](http://i.imgur.com/hI8nidX.jpg)
+![Screenshot of justgirlynews](http://i.imgur.com/9Gudi8s.jpg)
 
 **justgirlynews** uses [PHP Simple HTML DOM Parser](http://simplehtmldom.sourceforge.net/) to scrape the contents of the website for headlines and cover images as its [RSS feed](www.postimees.ee/rss/) only provided `50px*50px` thumbnails.
 
