@@ -5,6 +5,7 @@
 	<title>justgirlynews</title>
 	<link rel="stylesheet" href="main.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
 
@@ -51,6 +52,7 @@ function fetch($url) {
 				$description = $desc->plaintext;
 			}
 		}
+
 
 		// unappend comment number from title
 		$len = strlen($title);
