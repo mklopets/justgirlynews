@@ -32,6 +32,8 @@ function fetch($url) {
 	$articles = array();
 
 	foreach($html->find('article') as $article) {
+		// remove number of comments from <h1>
+		@$article->find('span[class=frontComments]')[0]->innertext = '';
 		$title = trim($article->find('h1')[0]->plaintext);
 		if (!$title)
 			continue;
@@ -53,13 +55,6 @@ function fetch($url) {
 			}
 		}
 
-
-		// unappend comment number from title
-		$len = strlen($title);
-		while (is_numeric($title[$len - 1])) {
-			$title = substr($title, 0, $len - 1);
-			$len--;
-		}
 
 		// skip article if image is too small
 		$img = @$article->find('img')[0];
