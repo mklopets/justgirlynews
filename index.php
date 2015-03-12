@@ -194,7 +194,5 @@ print_articles($articles, 20);
 		<a href="#">Contact</a>
 	</span>
 </footer>
-
-<div class="arrow"></div>
  </body>
 </html>
