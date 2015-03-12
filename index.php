@@ -32,6 +32,8 @@ $GLOBALS['new_window'] = true; // whether or not to open links in new tab/window
 
 $GLOBALS['justgirly'] = 'justgirlynews'; // justgirlythings style subheading text
 
+$GLOBALS['inappropriate'] = ['suri', 'laip']; // array of words commonly found in _sad_ news :(
+
 error_reporting(0);
 
 // END SETTINGS
@@ -49,6 +51,17 @@ function fetch($url) {
 		$title = trim($article->find('h1')[0]->plaintext);
 		if (!$title)
 			continue;
+
+		$justwhat = $GLOBALS['justgirly'];
+		// check for sad news in order to not be a jerk about death
+		$title_lc = strtolower($title);
+		foreach($GLOBALS['inappropriate'] as $word) {
+			if (strpos($title_lc, $word) !== FALSE) {
+				$justwhat = 'justsadnews';
+				break;
+			}
+		}
+
 
 		// get url to article
 		// criteria: <a class="frontUrl">
@@ -98,7 +111,8 @@ function fetch($url) {
 			'title' => $title,
 			'img_src' => $img_src,
 			'link' => $link,
-			'desc' => $description
+			'desc' => $description,
+			'justwhat' => $justwhat
 		);
 
 		$articles[] = $article; // append to array
@@ -148,6 +162,7 @@ function print_articles($articles, $limit) {
 		$title = $article['title'];
 		$link = $article['link'];
 		$desc = $article['desc'];
+		$justwhat = $article['justwhat'];
 
 		$description = ($GLOBALS['desc_title']) ? "title='{$desc}'" : '';
 		$target_attr = ($GLOBALS['new_window']) ? "target='_blank'" : '';
@@ -157,7 +172,7 @@ function print_articles($articles, $limit) {
 
 		echo '<div class="title">';
 		echo "<h1>{$a1}{$title}{$a2}</h1>";
-		echo "<h2>{$GLOBALS['justgirly']}</h2>";
+		echo "<h2>{$justwhat}</h2>";
 		echo '</div>';
 	}
 	echo '</div>';
