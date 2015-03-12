@@ -1,6 +1,6 @@
 # justgirlynews
 
-#### Grabs headlines with images from http://www.postimees.ee and turns them into elegant justgirlythings-esque masterpieces
+#### Grabs headlines with images from http://www.postimees.ee and turns them into elegant _justgirlythings-esque_ masterpieces
 
 ![Screenshot of justgirlynews](http://i.imgur.com/9Gudi8s.jpg)
 
