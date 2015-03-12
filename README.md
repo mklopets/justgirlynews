@@ -9,3 +9,5 @@
 The article images are used as background images and are then applied multiple CSS3 filters and a semi-opaque blue layer.
 
 The filters used here were inspired by [a post by Nick Georgiou](http://designpieces.com/2014/09/instagram-filters-css3-effects/).
+
+[Visit original justgirlynews](ec2-52-11-120-205.us-west-2.compute.amazonaws.com)
