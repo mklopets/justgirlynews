@@ -89,6 +89,10 @@ function fetch($url) {
 		$img_src = trim(@$img->{'data-src'});
 		$img = "<img src='{$img_src}' />";
 		
+		if (strlen($img_src) < 5) {
+			// invalid image
+			continue;
+		}
 
 		$article = array(
 			'title' => $title,
