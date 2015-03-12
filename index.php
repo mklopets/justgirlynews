@@ -6,6 +6,7 @@
 	<link rel="stylesheet" href="main.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" type="image/png" href="favicon.png">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
 <body>
 
@@ -32,7 +33,7 @@ $GLOBALS['new_window'] = true; // whether or not to open links in new tab/window
 
 $GLOBALS['justgirly'] = 'justgirlynews'; // justgirlythings style subheading text
 
-$GLOBALS['inappropriate'] = ['suri', 'laip']; // array of words commonly found in _sad_ news :(
+$GLOBALS['inappropriate'] = ['suri', 'surm', 'laip', 'vägistami', 'õnnetus', 'alko']; // array of words commonly found in _sad_ news :(
 
 error_reporting(0);
 
@@ -146,7 +147,7 @@ function print_articles($articles, $limit) {
 
 		$img_src = $article['img_src'];
 
-		echo "<article style=\"background-image: url('{$img_src}')\">";
+		echo "<article style=\"background-image: url('{$img_src}'); background-repeat: no-repeat; background-size: cover;\">";
 		echo "</article>\n\n";
 		// echo "<h1>{$title}</h1>";
 	}
@@ -173,7 +174,7 @@ function print_articles($articles, $limit) {
 		echo '<div class="title">';
 		echo "<h1>{$a1}{$title}{$a2}</h1>";
 		echo "<h2>{$justwhat}</h2>";
-		echo '</div>';
+		echo "</div>\n\n";
 	}
 	echo '</div>';
 }
@@ -190,8 +191,10 @@ print_articles($articles, 20);
 	<span class="info">By Marko Klopets. Data from <a href="http://www.postimees.ee">Postimees</a>.</span>
 	<span class="links">
 		<a href="https://github.com/mogalful/justgirlynews" target="_blank">Github</a>
-		<!-- <a href="#">Contact</a> -->
+		<a href="#">Contact</a>
 	</span>
 </footer>
-</body>
+
+<div class="arrow"></div>
+ </body>
 </html>
