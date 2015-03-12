@@ -30,7 +30,7 @@ $GLOBALS['desc_title'] = true; // whether or not to display description in <a ti
 $GLOBALS['links_enable'] = true; // whether or not to make headlines <a> tags
 $GLOBALS['new_window'] = true; // whether or not to open links in new tab/window
 
-$GLOBALS['justgirly'] = 'justgirlynews';
+$GLOBALS['justgirly'] = 'justgirlynews'; // justgirlythings style subheading text
 
 error_reporting(0);
 
