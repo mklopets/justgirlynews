@@ -11,24 +11,36 @@
 
 <?php
 
+$counter_path = ("hitcounter.txt");
+@$hits = file($counter_path);
+$hits[0] ++;
+@$fp = fopen($counter_path , "w");
+@fputs($fp , "$hits[0]");
+@fclose($fp);
+
+
+
 require 'simple_html_dom.php';
 
 
 // BEGIN SETTINGS
 
 $url = 'http://www.postimees.ee/';
-$GLOBALS['desc_title'] = true; // whether or not to display description in title attribute
-$GLOBALS['links_enable'] = true; // whether or not to make titles <a> tags
-$GLOBALS['new_window'] = true;
+$GLOBALS['desc_title'] = true; // whether or not to display description in <a title=""> attribute
+$GLOBALS['links_enable'] = true; // whether or not to make headlines <a> tags
+$GLOBALS['new_window'] = true; // whether or not to open links in new tab/window
 
 $GLOBALS['justgirly'] = 'justgirlynews';
 
+error_reporting(0);
 
 // END SETTINGS
 
 function fetch($url) {
 	$html = file_get_html($url);
-
+	if (!$html) {
+		die('<br><br>Failed to retrieve news.<br><br>');
+	}
 	$articles = array();
 
 	foreach($html->find('article') as $article) {
@@ -61,16 +73,17 @@ function fetch($url) {
 		$width = @$img->width;
 		$height = @$img->height;
 
-		if ($width < 250 && $height < 180) {
-			// soft skip over
-			continue;
+		if ($width && $height) {
+			if ($width < 300 && $height < 10) {
+				// soft skip over
+				continue;
+			}
+	
+			if ($width < 180 || $height < 180) {
+				// hard skip
+				continue;
+			}
 		}
-
-		if ($width < 180 || $height < 180) {
-			// hard skip
-			continue;
-		}
-
 
 		// get image url
 		$img_src = trim(@$img->{'data-src'});
@@ -161,6 +174,5 @@ print_articles($articles, 20);
 		<!-- <a href="#">Contact</a> -->
 	</span>
 </footer>
-
 </body>
 </html>
