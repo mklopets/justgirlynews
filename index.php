@@ -5,9 +5,15 @@
 	<title>justgirlynews</title>
 	<link rel="stylesheet" href="main.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="justgirlynews" />
+	<meta property="og:type" content="website" />
+	<meta property="og:image" content="http://klopets.me/justgirlynews/4kIPemK-compressor.png" />
+	<meta property="og:url" content="http://klopets.me/justgirlynews/" />
+	<meta property="og:description" content="A justgirlythings-esque news reader for cool people" />
 	<link rel="icon" type="image/png" href="favicon.png">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="scroll3.js"></script>
+	</script>
 </head>
 <body>
 
@@ -34,7 +40,7 @@ $GLOBALS['new_window'] = true; // whether or not to open links in new tab/window
 
 $GLOBALS['justgirly'] = 'justgirlynews'; // justgirlythings style subheading text
 
-$GLOBALS['inappropriate'] = ['suri', 'surm', 'laip', 'vägistami', 'õnnetus', 'alko']; // array of words commonly found in _sad_ news :(
+$GLOBALS['inappropriate'] = ['suri', 'surm', 'laip', 'vägistami', 'õnnetus', 'alko', 'matus', 'sõja', 'separatist', 'hiv ']; // array of words commonly found in _sad_ news :(
 
 error_reporting(0);
 
@@ -59,7 +65,7 @@ function fetch($url) {
 		$title_lc = strtolower($title);
 		foreach($GLOBALS['inappropriate'] as $word) {
 			if (strpos($title_lc, $word) !== FALSE) {
-				$justwhat = 'justsadnews';
+				$justwhat = 'justbadnews';
 				break;
 			}
 		}
