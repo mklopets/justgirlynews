@@ -1,8 +1,9 @@
 # justgirlynews
 
-###[Original justgirlynews](http://klopets.me/justgirlynews/)
 
 #### Grabs headlines with images from http://www.postimees.ee and turns them into elegant _justgirlythings-esque_ masterpieces
+
+####[Original justgirlynews](http://klopets.me/justgirlynews/)
 
 ![Screenshot of justgirlynews](http://i.imgur.com/9Gudi8s.jpg)
 
