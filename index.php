@@ -73,7 +73,6 @@ function fetch($url) {
 
 		// get url to article
 		// criteria: <a class="frontUrl">
-		
 		if (!$link = $article->find('a')[0]->href) {
 			$link = '#';
 		}
@@ -115,6 +114,8 @@ function fetch($url) {
 			continue;
 		}
 
+
+		// store scraped data
 		$article = array(
 			'title' => $title,
 			'img_src' => $img_src,
@@ -161,8 +162,6 @@ function print_articles($articles, $limit) {
 	echo '</div>';
 
 	// prints text
-
-
 	echo '<div class="titles">';
 	for ($i = 0; $i < $limit; $i++) {
 		$article = $articles[$i];
@@ -197,7 +196,7 @@ print_articles($articles, 20);
 <footer>
 	<span class="info">By Marko Klopets. Data from <a href="http://www.postimees.ee">Postimees</a>.</span>
 	<span class="links">
-		<a href="https://github.com/mogalful/justgirlynews" target="_blank">Github</a>
+		<a href="https://github.com/mklopets/justgirlynews" target="_blank">Github</a>
 		<a href="#">Contact</a>
 	</span>
 </footer>
